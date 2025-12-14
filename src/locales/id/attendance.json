@@ -1,0 +1,10 @@
+{
+  "title": "Daftar Kehadiran",
+  "date": "Tanggal",
+  "clockIn": "Masuk",
+  "clockOut": "Keluar",
+  "clockInSuccess": "Berhasil Masuk",
+  "clockOutSuccess": "Berhasil Keluar",
+  "clockInTime": "Jam Masuk",
+  "clockOutTime": "Jam Keluar"
+}

@@ -27,6 +27,12 @@ const Home: React.FC = () => {
             >
               <a className='mt-6 py-2 px-4 text-sm font-medium underline'>{t('home:example')}</a>
             </Link>
+            <Link
+              href={{ pathname: '/attendances', query: { lang: router.query.lang } }}
+              locale={router.locale}
+            >
+              <a className='mt-6 py-2 px-4 text-sm font-medium underline'>{t('home:attendances')}</a>
+            </Link>
           </div>
         </section>
       </main>
