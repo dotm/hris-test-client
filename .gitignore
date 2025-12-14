@@ -11,6 +11,11 @@ node_modules
 /.pnp
 .pnp.*
 
+# Ignore all .env files
+.env*
+# Except this one
+!.env.example
+
 # Testing
 /coverage
 .out/
