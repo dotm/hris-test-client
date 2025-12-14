@@ -25,6 +25,7 @@ node_modules
 .next-dev/
 out/
 build/
+tar-release
 
 # Misc
 .DS_Store
