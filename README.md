@@ -1,3 +1,16 @@
+# Notes
+
+How to Run in Local: yarn dev
+
+## Local Setup Steps
+
+- git init
+- yarn install
+- ignore env files (see git commit)
+- add and fill .env.local file
+- cp .env.local .env
+- yarn dev
+
 # Kotakodelab Full-Stack / Frontend homework (TypeScript, REST API)
 
 ## Requirements
