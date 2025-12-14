@@ -26,11 +26,15 @@ const AttendanceList: FC = () => {
     useGetListAttendancesQuery(query)
 
   const [clockIn, {
+    isError: isClockInError,
+    error: clockInError,
     isLoading: isClockInLoading,
     isSuccess: isClockInSuccess,
   }] = useClockInMutation()
 
   const [clockOut, {
+    isError: isClockOutError,
+    error: clockOutError,
     isLoading: isClockOutLoading,
     isSuccess: isClockOutSuccess,
   }] = useClockOutMutation()
@@ -47,6 +51,28 @@ const AttendanceList: FC = () => {
       alert(t('attendance:clockOutSuccess'))
     }
   }, [isClockOutSuccess, t])
+
+  useEffect(() => {
+    if (!isClockInError || !clockInError) return
+
+    const message =
+      (clockInError as any)?.data?.message
+
+    if (message === 'Already clocked in before') {
+      alert(t('attendance:alreadyClockedInToday'))
+    }
+  }, [isClockInError, clockInError, t])
+
+  useEffect(() => {
+    if (!isClockOutError || !clockOutError) return
+
+    const message =
+      (clockOutError as any)?.data?.message
+
+    if (message === 'Already clocked out before') {
+      alert(t('attendance:alreadyClockedOutToday'))
+    }
+  }, [isClockOutError, clockOutError, t])
 
   return (
     <Blank title={t('attendance:title')}>
@@ -86,6 +112,7 @@ const AttendanceList: FC = () => {
               {t('attendance:clockOut')}
             </button>
           </div>
+          <p className='text-center text-sm font-bold mt-2'>{t('attendance:oneClockInAndOutWarning')}</p>
 
           <div className='mx-3 mt-6 grid grid-cols-1 gap-y-10 gap-x-2 sm:grid-cols-1 lg:grid-cols-2'>
             {isLoading &&

@@ -1,6 +1,9 @@
 {
   "title": "Daftar Kehadiran",
   "date": "Tanggal",
+  "oneClockInAndOutWarning": "PERINGATAN: Anda hanya bisa Masuk dan Keluar sekali dalam sehari",
+  "alreadyClockedInToday": "Error: Sudah Masuk Hari Ini",
+  "alreadyClockedOutToday": "Error: Sudah Keluar Hari Ini",
   "clockIn": "Masuk",
   "clockOut": "Keluar",
   "clockInSuccess": "Berhasil Masuk",
